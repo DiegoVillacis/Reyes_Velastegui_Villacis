@@ -30,10 +30,6 @@ class RegistroClienteActivity : AppCompatActivity() {
         var bandera:Boolean= false
 
 
-
-
-
-
         if(bandera){
             var config = Config()
             var url = config.ipServidor+ "Cliente"
@@ -88,7 +84,19 @@ class RegistroClienteActivity : AppCompatActivity() {
         if (binding.editTextClienteClave.text.toString().equals("")) return  false
 
         return true
+
     }
 
+    private fun validarContraseñaRVV(clave: String ): Boolean{
+        var mayusRVV = false;
+        var minusRVV = false;
+        var numRVV = false;
+        var carRVV = false;
+        var bRVV= false;
 
+        if(clave.length>=6 && clave.length<=10){
+
+        }
+        return true;
+    }
 }
