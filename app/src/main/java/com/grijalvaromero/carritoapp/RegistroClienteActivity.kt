@@ -88,7 +88,15 @@ class RegistroClienteActivity : AppCompatActivity() {
     }
 
     private fun validarContraseñaRVV(clave: String ): Boolean{
+        var mayusRVV = false;
+        var minusRVV = false;
+        var numRVV = false;
+        var carRVV = false;
+        var bRVV= false;
 
+        if(clave.length>=6 && clave.length<=10){
+
+        }
         return true;
     }
 }
