@@ -36,10 +36,6 @@ class LoginActivity : AppCompatActivity() {
         editTextUsuario= findViewById(R.id.editTextUsuario)
         editTextClave = findViewById(R.id.editTextTextClave)
 
-
-
-
-
     }
 
     fun registro( view:View){
