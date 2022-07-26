@@ -84,7 +84,9 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(inten)
 
                 }else{
+
                     Toast.makeText(this,"Usuario, contraseña o correo Incorrecto",Toast.LENGTH_LONG).show()
+
                 }
 
             },
