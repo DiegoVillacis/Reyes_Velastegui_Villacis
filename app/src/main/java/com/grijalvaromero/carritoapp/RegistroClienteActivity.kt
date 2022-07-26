@@ -32,7 +32,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
         if(validarCamposRVV(binding)) {
             if(validarCedulaRVV(cedula)){
-                if(validarCedulaRVV(clave)){
+                if(validarContraseñaRVV(clave)){
 
                     banderaRVV= true
                 }else{
