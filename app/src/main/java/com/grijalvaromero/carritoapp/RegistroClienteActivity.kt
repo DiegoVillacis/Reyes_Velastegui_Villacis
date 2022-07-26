@@ -177,24 +177,30 @@ class RegistroClienteActivity : AppCompatActivity() {
         var numRVV = false;
         var carRVV = false;
         var bRVV= false;
+        var mayusCont = 0;
+        var minusCont = 0;
 
         if(clave.length>=6 && clave.length<=10){
-        for(item in clave)
-        {
-            Log.i("clave", item.toString())
-            if(Character.isDigit(item)){
-                numRVV = true;
+            for(item in clave)
+            {
+                Log.i("clave", item.toString())
+                if(Character.isDigit(item)){
+                    numRVV = true;
+                }
+                if(Character.isUpperCase(item)){
+                    mayusCont++
+                    if(mayusCont >= 2)
+                        mayusRVV= true;
+                }
+                if(Character.isLowerCase(item)){
+                    minusCont++
+                    if(minusCont >= 2)
+                        minusRVV=true;
+                }
+                if(Character.isLetterOrDigit(item)){
+                    carRVV=true;
+                }
             }
-            if(Character.isUpperCase(item)){
-                mayusRVV= true;
-            }
-            if(Character.isLowerCase(item)){
-                minusRVV=true;
-            }
-            if(Character.isLetterOrDigit(item)){
-                carRVV=true;
-            }
-        }
         }else{
             bRVV=false;
         }
