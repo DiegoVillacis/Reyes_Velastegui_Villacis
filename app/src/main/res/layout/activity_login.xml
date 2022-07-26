@@ -34,7 +34,6 @@
         android:ems="10"
         android:focusedByDefault="true"
         android:hint="@string/txt_contrseña"
-        android:inputType="textPassword"
         android:maxLength="10"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
