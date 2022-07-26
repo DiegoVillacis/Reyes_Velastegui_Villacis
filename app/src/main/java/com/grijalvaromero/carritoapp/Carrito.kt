@@ -40,8 +40,7 @@ class Carrito : AppCompatActivity() {
     var totalSalida = 0.0;
     lateinit var idCliente: String
     var clienteID: Int = 0
-    var hola: Int = 0
-    //  lateinit var listaCompra: ArrayList<DetalleVenta>
+    //lateinit var listaCompra: ArrayList<DetalleVenta>
 
     val listaCompra: MutableList<DetalleVenta> = mutableListOf()
 
