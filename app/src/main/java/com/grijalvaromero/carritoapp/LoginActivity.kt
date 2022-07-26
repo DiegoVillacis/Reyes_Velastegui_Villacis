@@ -38,7 +38,6 @@ class LoginActivity : AppCompatActivity() {
 
         editTextUsuario= findViewById(R.id.editTextUsuario)
         editTextClave = findViewById(R.id.editTextTextClave)
-        editTextCorreo = findViewById(R.id.editTextCorreo)
 
 
 
@@ -54,7 +53,6 @@ class LoginActivity : AppCompatActivity() {
 
         cedula = editTextUsuario.text.toString()
         clave = editTextClave.text.toString()
-        correo = editTextCorreo.text.toString()
 
         var bandera:Boolean= false
 
@@ -67,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                 for (i in 0 until datos.length()){
                     val item = datos.getJSONObject(i)
                    Log.i("Cliente",item.getString("contrasenia"))
-                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString() && correo == item.getString("correo").toString()){
+                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString()){
                        bandera = true
 
                         idCliente= item.getString("idCliente").toString()
@@ -86,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(inten)
 
                 }else{
-                    Toast.makeText(this,"Usuario o contraseña Incorrecto",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Usuario, contraseña o correo Incorrecto",Toast.LENGTH_LONG).show()
                 }
 
             },
