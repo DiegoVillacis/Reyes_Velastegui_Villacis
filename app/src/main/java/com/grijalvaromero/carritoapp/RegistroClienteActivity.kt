@@ -112,7 +112,6 @@ class RegistroClienteActivity : AppCompatActivity() {
 
 
     private fun validarCedulaRVV(cedulaRVV: String): Boolean {
-
         var cedulaCorrectaRVV = false
 
         try {
@@ -210,6 +209,7 @@ class RegistroClienteActivity : AppCompatActivity() {
         }
         return bRVV;
     }
+
 
 
     /*
