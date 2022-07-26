@@ -36,8 +36,8 @@ class RegistroClienteActivity : AppCompatActivity() {
 
                     banderaRVV= true
                 }else{
-                    Toast.makeText(this,"La clave de tener minimo 4 caracteres, " +
-                            "mayuscula, minuscula,numero,y  caracter especial",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"La clave de tener minimo 6 y maximo 10 caracteres, " +
+                            " dos mayuscula, dos minuscula,numero,y  caracter especial",Toast.LENGTH_LONG).show()
                 }
             }else{
                 Toast.makeText(this,"Cedula incorrecta",Toast.LENGTH_LONG).show()
