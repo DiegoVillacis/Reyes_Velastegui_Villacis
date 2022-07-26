@@ -123,38 +123,7 @@ override fun onNavigationItemSelected(item: MenuItem): Boolean {
  drawer_layout.closeDrawer(GravityCompat.START)
  return true
 }
-/*fun setupDrawer(): ActionBarDrawerToggle {
- return  ActionBarDrawerToggle(this, mDrawer,toolbar,"Open","Close")
-}*/
-/*override fun onOptionsItemSelected(item: MenuItem): Boolean {
- var fragment:Fragment
 
-  when (item.itemId) {
-     android.R.id.home -> {
-         mDrawer.openDrawer(GravityCompat.START);
-
-         true
-     }
-     R.id.nav_first_fragment -> {
-         supportFragmentManager.beginTransaction().replace(R.id.flContent,ComprasFragment()).commit()
-         true
-     }
-      R.id.nav_second_fragment -> {
-          supportFragmentManager.beginTransaction().replace(R.id.flContent,FavsFragment()).commit()
-          true
-      }
-      R.id.nav_third_fragment -> {
-          supportFragmentManager.beginTransaction().replace(R.id.flContent,ComprasFragment()).commit()
-          true
-      }
-
-     else -> super.onOptionsItemSelected(item)
- }
- item.setChecked(true)
- setTitle(item.title)
- mDrawer.closeDrawers()
- return true
-}*/
 
 
 }

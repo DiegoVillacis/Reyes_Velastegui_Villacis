@@ -27,6 +27,9 @@ lateinit var  cedula:String
 lateinit var clave:String
 lateinit var idCliente:String
 
+lateinit var editTextCorreo: EditText
+lateinit var  correo:String
+
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +38,9 @@ class LoginActivity : AppCompatActivity() {
 
         editTextUsuario= findViewById(R.id.editTextUsuario)
         editTextClave = findViewById(R.id.editTextTextClave)
+        editTextCorreo = findViewById(R.id.editTextCorreo)
+
+
 
     }
 
@@ -45,8 +51,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login(view:View){
+
         cedula = editTextUsuario.text.toString()
         clave = editTextClave.text.toString()
+        correo = editTextCorreo.text.toString()
 
         var bandera:Boolean= false
 
@@ -59,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                 for (i in 0 until datos.length()){
                     val item = datos.getJSONObject(i)
                    Log.i("Cliente",item.getString("contrasenia"))
-                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString()){
+                    if(cedula == item.getString("cedulaCli").toString() && clave == item.getString("contrasenia").toString() && correo == item.getString("correo").toString()){
                        bandera = true
 
                         idCliente= item.getString("idCliente").toString()
