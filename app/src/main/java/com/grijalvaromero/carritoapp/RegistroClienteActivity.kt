@@ -14,7 +14,7 @@ import com.android.volley.toolbox.Volley
 import com.grijalvaromero.carritoapp.configs.Config
 import com.grijalvaromero.carritoapp.databinding.ActivityRegistroClienteBinding
 import org.json.JSONObject
-import java.text.CharacterIterator
+import java.sql.Statement
 
 
 class RegistroClienteActivity : AppCompatActivity() {
@@ -210,5 +210,29 @@ class RegistroClienteActivity : AppCompatActivity() {
         }
         return bRVV;
     }
+
+
+    /*
+    fun ValidarCorreo(correo: String?): Boolean? {
+        var salida = false
+        try {
+            val st: Statement = connectionclass().createStatement()
+            val rs =
+                st.executeQuery("select correo from Clientes where correo='" + editTextCorreo.getText() + "'")
+            if (rs.next()) {
+                salida = if (rs.getString(1) !== "") {
+                    Toast.makeText(this, "El correo ya existe...", Toast.LENGTH_LONG).show()
+                    false
+                } else {
+                    true
+                }
+            }
+        } catch (ex: java.lang.Exception) {
+            salida = false
+        }
+        return salida
+    }
+    */
+
 
 }
