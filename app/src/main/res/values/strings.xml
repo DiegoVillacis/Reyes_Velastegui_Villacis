@@ -21,7 +21,10 @@
     <string name="txt_registrarse">Registrar</string>
 
     <string name="txt_cedula">Cedula</string>
+
     <string name="txt_nombre">Nombre</string>
+    <string name="txt_correoRegistroRVV">Correo RVV</string>
+
     <string name="txt_apellido">Apellido</string>
     <string name="txt_direccion">Direccion</string>
     <string name="txt_contraseña">Contraseña</string>
