@@ -27,11 +27,33 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     binding.buttonCliienteRegistrar.setOnClickListener {
         var cedula = binding.editTextClienteCedula.text.toString()
-        var clave= binding.editTextClienteClave.text.toString()
-        var bandera:Boolean= false
+        var clave = binding.editTextClienteClave.text.toString()
+        var banderaRVV:Boolean= false
 
+        if(validarCamposRVV(binding)) {
+            if(validarCedulaRVV(cedula)){
+                if(validarCedulaRVV(clave)){
 
-        if(bandera){
+                    banderaRVV= true
+                }else{
+                    Toast.makeText(this,"La clave de tener minimo 4 caracteres, " +
+                            "mayuscula, minuscula,numero,y  caracter especial",Toast.LENGTH_LONG).show()
+                }
+            }else{
+                Toast.makeText(this,"Cedula incorrecta",Toast.LENGTH_LONG).show()
+            }
+
+        }else{
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Campos Incompletos")
+            builder.setMessage("LLene todos los campos")
+            builder.setPositiveButton("Aceptar") { dialog, which ->
+            }
+            builder.show()
+        }
+
+        if(banderaRVV){
             var config = Config()
             var url = config.ipServidor+ "Cliente"
 
@@ -76,7 +98,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     }
 
-    private fun validarCampos(binding: ActivityRegistroClienteBinding): Boolean {
+    private fun validarCamposRVV(binding: ActivityRegistroClienteBinding): Boolean {
 
         if (binding.editTextClienteCedula.text.toString().equals("")) return  false
         if (binding.editTextClienteApellido.text.toString().equals("")) return  false
@@ -182,4 +204,5 @@ class RegistroClienteActivity : AppCompatActivity() {
         }
         return bRVV;
     }
+
 }
