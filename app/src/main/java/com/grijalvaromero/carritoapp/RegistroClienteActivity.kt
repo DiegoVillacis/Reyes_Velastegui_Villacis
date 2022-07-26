@@ -27,14 +27,14 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     binding.buttonCliienteRegistrar.setOnClickListener {
         var cedula = binding.editTextClienteCedula.text.toString()
-        var clave= binding.editTextClienteClave.text.toString()
-        var bandera:Boolean= false
+        var clave = binding.editTextClienteClave.text.toString()
+        var banderaRVV:Boolean= false
 
-        if(validarCampos(binding)) {
+        if(validarCamposRVV(binding)) {
             if(validarCedulaRVV(cedula)){
                 if(validarCedulaRVV(clave)){
 
-                    bandera= true
+                    banderaRVV= true
                 }else{
                     Toast.makeText(this,"La clave de tener minimo 4 caracteres, " +
                             "mayuscula, minuscula,numero,y  caracter especial",Toast.LENGTH_LONG).show()
@@ -53,7 +53,7 @@ class RegistroClienteActivity : AppCompatActivity() {
             builder.show()
         }
 
-        if(bandera){
+        if(banderaRVV){
             var config = Config()
             var url = config.ipServidor+ "Cliente"
 
@@ -98,7 +98,7 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     }
 
-    private fun validarCampos(binding: ActivityRegistroClienteBinding): Boolean {
+    private fun validarCamposRVV(binding: ActivityRegistroClienteBinding): Boolean {
 
         if (binding.editTextClienteCedula.text.toString().equals("")) return  false
         if (binding.editTextClienteApellido.text.toString().equals("")) return  false
