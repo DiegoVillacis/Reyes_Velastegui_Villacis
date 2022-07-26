@@ -116,7 +116,9 @@ class RegistroClienteActivity : AppCompatActivity() {
             bRVV=false;
         }
 
-
-        return true;
+        if(numRVV && minusRVV && mayusRVV && carRVV){
+            bRVV=true;
+        }
+        return bRVV;
     }
 }
