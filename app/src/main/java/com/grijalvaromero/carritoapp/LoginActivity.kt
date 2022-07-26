@@ -74,6 +74,7 @@ class LoginActivity : AppCompatActivity() {
 
                     }
                 }
+
                 var conexion = ConexionCliente(this)
                 var  db = conexion.writableDatabase
 
@@ -83,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
                     var inten = Intent(this,MainActivity::class.java)
                     inten.putExtra("idCliente", "1")
                     startActivity(inten)
+
                 }else{
                     Toast.makeText(this,"Usuario o contraseña Incorrecto",Toast.LENGTH_LONG).show()
                 }
