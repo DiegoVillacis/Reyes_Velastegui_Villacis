@@ -88,6 +88,67 @@ class RegistroClienteActivity : AppCompatActivity() {
 
     }
 
+
+    private fun validarCedulaRVV(cedulaRVV: String): Boolean {
+
+        var cedulaCorrectaRVV = false
+
+        try {
+            if (cedulaRVV.length === 10)
+            {
+                val tercerDigitoRVV = cedulaRVV.substring(2, 3).toInt()
+
+                if (tercerDigitoRVV < 6) {
+
+                    val coefValCedulaRVV = intArrayOf(2, 1, 2, 1, 2, 1, 2, 1, 2)
+                    val verificadorRVV = cedulaRVV.substring(9, 10).toInt()
+                    var sumaRVV = 0
+                    var digitoRVV = 0
+
+                    for (i in 0 until cedulaRVV.length - 1) {
+
+                        digitoRVV = cedulaRVV.substring(i, i + 1).toInt() * coefValCedulaRVV[i]
+                        sumaRVV += digitoRVV % 10 + digitoRVV / 10
+
+                    }
+
+                    if (sumaRVV % 10 == 0 && sumaRVV % 10 == verificadorRVV) {
+
+                        cedulaCorrectaRVV = true
+
+                    } else if (10 - sumaRVV % 10 == verificadorRVV) {
+
+                        cedulaCorrectaRVV = true
+
+                    } else {
+
+                        cedulaCorrectaRVV = false
+
+                    }
+                } else {
+                    cedulaCorrectaRVV = false
+                }
+            } else {
+                cedulaCorrectaRVV = false
+            }
+        } catch (nfe: NumberFormatException) {
+
+            cedulaCorrectaRVV = false
+
+        } catch (err: Exception) {
+
+            cedulaCorrectaRVV = false
+        }
+        if (!cedulaCorrectaRVV) {
+            println("La Cédula ingresada es Incorrecta")
+        }
+        return cedulaCorrectaRVV
+    }
+
+
+
+
+
     private fun validarContraseñaRVV(clave: String ): Boolean{
         var mayusRVV = false;
         var minusRVV = false;
