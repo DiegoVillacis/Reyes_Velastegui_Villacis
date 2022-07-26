@@ -14,6 +14,7 @@ import com.android.volley.toolbox.Volley
 import com.grijalvaromero.carritoapp.configs.Config
 import com.grijalvaromero.carritoapp.databinding.ActivityRegistroClienteBinding
 import org.json.JSONObject
+import java.text.CharacterIterator
 
 
 class RegistroClienteActivity : AppCompatActivity() {
@@ -95,8 +96,27 @@ class RegistroClienteActivity : AppCompatActivity() {
         var bRVV= false;
 
         if(clave.length>=6 && clave.length<=10){
-
+        for(item in clave)
+        {
+            Log.i("clave", item.toString())
+            if(Character.isDigit(item)){
+                numRVV = true;
+            }
+            if(Character.isUpperCase(item)){
+                mayusRVV= true;
+            }
+            if(Character.isLowerCase(item)){
+                minusRVV=true;
+            }
+            if(Character.isLetterOrDigit(item)){
+                carRVV=true;
+            }
         }
+        }else{
+            bRVV=false;
+        }
+
+
         return true;
     }
 }
